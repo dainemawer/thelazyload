@@ -5,7 +5,7 @@ import Link from 'next/link'
 const Index = () => {
     return (
         <Layout>
-            <Meta title="Index" />
+            <Meta title="The Lazy Load" />
             <h1 role="heading">Index</h1>
             <p id="go-to-article">
                 <Link href={`/articles/article`}>Go To Article</Link>
