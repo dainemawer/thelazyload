@@ -6,7 +6,7 @@ const Index = () => {
     return (
         <Layout>
             <Meta title="Index" />
-            <h1>Index</h1>
+            <h1 role="heading">Index</h1>
             <p id="go-to-article">
                 <Link href={`/articles/article`}>Go To Article</Link>
             </p>
