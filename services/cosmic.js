@@ -5,4 +5,3 @@ export const bucket = Cosmic().bucket({
     slug: BUCKET_SLUG,
     read_key: READ_KEY,
 })
-

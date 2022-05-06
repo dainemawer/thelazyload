@@ -1,12 +1,15 @@
 import Head from 'next/head'
 import { useRouter } from 'next/router'
 import { isWindow } from '@util/dom'
+import { isHome } from '@util/router'
+import { SITE_TITLE } from '@lib/constants'
 
-const Meta = ({ title }) => {
+const Meta = ({ page }) => {
     const router = useRouter()
     const host = isWindow && window.location.host
     const protocol = isWindow && window.location.protocol
     const path = `${protocol}//${host}${router.asPath}`
+    const title = isHome(router.pathname) ? SITE_TITLE : `${page} | ${SITE_TITLE}`
     return (
         <Head>
             <meta charSet="utf-8" />

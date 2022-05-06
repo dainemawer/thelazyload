@@ -4,7 +4,7 @@ import Meta from '@components/Meta/Meta'
 const Submit = () => {
     return (
         <Layout>
-            <Meta title="Submit" />
+            <Meta page="Submit" />
             <h1>Submit</h1>
         </Layout>
     )
