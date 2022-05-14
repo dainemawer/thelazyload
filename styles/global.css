@@ -1,3 +1,117 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@font-face {
+    font-family: 'Inter';
+    font-display: swap;
+    font-style: normal;
+    font-weight: 400;
+    src: url('/fonts/Inter.woff') format('woff');
+}
+
+@font-face {
+    font-family: 'Inter';
+    font-display: swap;
+    font-style: normal;
+    font-weight: 700;
+    src: url('/fonts/Inter-Bold.woff2') format('woff2');
+}
+
+@font-face {
+    font-family: 'Eudoxussans';
+    font-display: swap;
+    font-style: normal;
+    font-weight: 400;
+    src: url('/fonts/EudoxusSans-Regular.woff2') format('woff2'),
+        url('/fonts/EudoxusSans-Regular.woff') format('woff');
+}
+
+@font-face {
+    font-family: 'Eudoxussans';
+    font-display: swap;
+    font-style: normal;
+    font-weight: 700;
+    src: url('/fonts/EudoxusSans-Bold.woff2') format('woff2'),
+        url('/fonts/EudoxusSans-Bold.woff') format('woff');
+}
+
+@font-face {
+    font-family: 'Eudoxussans';
+    font-display: swap;
+    font-style: normal;
+    font-weight: 800;
+    src: url('/fonts/EudoxusSans-ExtraBold.woff2') format('woff2'),
+        url('/fonts/EudoxusSans-ExtraBold.woff') format('woff');
+}
+
+mark {
+   @apply bg-gray-200
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    @apply font-eudoxussans;
+}
+
+.aa-Form {
+    @apply relative;
+}
+
+.aa-DetachedCancelButton,
+.aa-InputWrapperSuffix,
+.aa-InputWrapperPrefix {
+    @apply hidden
+}
+
+.aa-PanelLayout {
+    @apply py-4
+}
+
+.aa-Item {
+    @apply mb-2
+}
+
+.aa-ItemTitle {
+    @apply text-sm
+}
+
+.aa-Input {
+    @apply w-full rounded-full border-gray-300;
+}
+
+.aa-DetachedSearchButton {
+    @apply flex items-center transition-colors duration-200 rounded-full hover:bg-indigo-700 bg-indigo-100 hover:text-white focus:text-white px-6 py-2;
+}
+
+.aa-DetachedSearchButtonPlaceholder {
+    @apply text-sm ml-2
+}
+
+.aa-SubmitIcon {
+    @apply w-4 h-4
+}
+
+.aa-DetachedOverlay {
+    @apply fixed bg-slate-700/60 w-full h-full transition-colors duration-200 top-0 right-0 bottom-0 left-0 p-4;
+}
+
+.aa-DetachedContainer {
+    @apply absolute bg-white rounded-lg right-2/4 translate-x-2/4 p-8 max-w-2xl w-full
+}
+
+.aa-Detached {
+    @apply overflow-hidden
+}
+
+.tag-html {
+    @apply text-green-600 bg-green-100
+}
+
+.tag-css {
+    @apply text-sky-600 bg-sky-100
+}

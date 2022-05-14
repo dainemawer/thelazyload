@@ -11,6 +11,8 @@ import ArticleHeader from '@components/ArticleHeader/ArticleHeader'
 import ArticleFooter from '@components/ArticleFooter/ArticleFooter'
 import ArticleMeta from '@components/ArticleMeta/ArticleMeta'
 import ArticleRelated from '@components/ArticleRelated/ArticleRelated'
+import ArticleShare from '@components/ArticleShare/ArticleShare'
+import Newsletter from '@components/Newsletter/Newsletter'
 
 const Resource = ({ resource, related }) => {
     const router = useRouter()
@@ -33,6 +35,7 @@ const Resource = ({ resource, related }) => {
                     author={author}
                     reading={`${readingTime} min read`}
                 />
+                <ArticleShare title={resource.title} url={resource.slug} description={excerpt} screenshot={cover_image.url} />
                 <ArticleExcerpt excerpt={excerpt} />
                 {cover_image.url !== null && (
                     <Image className="rounded-lg" alt="Hero Image" layout="responsive" priority src={cover_image.url} width={896} height={448} />
@@ -44,8 +47,8 @@ const Resource = ({ resource, related }) => {
                 <ArticleMeta url={url} />
             </aside>
             
-            <ArticleRelated posts={related} type="resources" />
-            
+            {related.length > 0 && <ArticleRelated posts={related} type="resources" />}
+            <Newsletter />
         </Layout>
     )
 }

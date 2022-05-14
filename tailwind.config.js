@@ -6,12 +6,13 @@ module.exports = {
     theme: {
         extend: {
             fontFamily: {
-                poppins: ['Poppins', 'sans-serif'],
-                roboto: ['Roboto', 'sans-serif'],
+                eudoxussans: ['Eudoxussans', 'sans-serif'],
+                inter: ['Inter', 'sans-serif'],
             }
         },
     },
     plugins: [
         require('@tailwindcss/typography'),
+        require('@tailwindcss/forms')
     ],
 }

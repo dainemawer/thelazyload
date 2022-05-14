@@ -1,8 +1,8 @@
 const ArticleExcerpt = ({ excerpt }) => {
     return (
-        <blockquote>
+        <p className="text-xl mb-0">
             {excerpt}
-        </blockquote>
+        </p>
     )
 }
 export default ArticleExcerpt

@@ -14,13 +14,22 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "@algolia/autocomplete-js": "^1.6.2",
+    "@algolia/autocomplete-plugin-query-suggestions": "^1.6.2",
+    "@heroicons/react": "^1.0.6",
+    "algoliasearch": "^4.13.0",
     "cosmicjs": "^4.1.7",
     "jest-environment-jsdom": "^28.0.2",
     "next": "^12.1.6",
+    "node-mailjet": "^3.4.1",
     "react": "^18.1.0",
-    "react-dom": "^18.1.0"
+    "react-dom": "^18.1.0",
+    "react-hook-form": "^7.30.0",
+    "react-instantsearch-dom": "^6.24.2",
+    "react-toggle-dark-mode": "^1.0.4"
   },
   "devDependencies": {
+    "@tailwindcss/forms": "^0.5.1",
     "@tailwindcss/typography": "^0.5.2",
     "@testing-library/jest-dom": "^5.16.4",
     "@testing-library/react": "^13.2.0",

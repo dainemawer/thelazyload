@@ -5,7 +5,7 @@ export const getArticles = async () => {
         query: {
             type: 'articles',
         },
-        props: 'id,title,slug,metadata,created_at,published_at',
+        props: 'id,title,slug,metadata,created_at,published_at,type',
         status: 'all'
     })
     return data.objects

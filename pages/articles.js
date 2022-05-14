@@ -7,18 +7,22 @@ const Articles = ({ articles }) => {
     return (
         <Layout>
             <Meta page="Articles" />
-            <h1>Articles</h1>
-            {articles.map(article => (
-                <ArticleCard
-                    key={article.id}
-                    id={article.id}
-                    title={article.title}
-                    type="articles"
-                    slug={article.slug}
-                    metadata={article.metadata}
-                    published={article.published_at}
-                />
-            ))}
+            <h1 className="mb-4 mt-14">Articles</h1>
+            <h2 className="max-w-2xl mt-0 mb-16 font-normal text-zinc-600">Tutorials, research and insights into everyday engineering challenges, with a focus on performance.</h2>
+            <section className="grid gap-4 grid-cols-3">
+                {articles.map(article => (
+                    <ArticleCard
+                        key={article.id}
+                        id={article.id}
+                        title={article.title}
+                        type={article.type}
+                        slug={article.slug}
+                        metadata={article.metadata}
+                        published={article.published_at}
+                    />
+                ))}
+            </section>
+            
         </Layout>
     )
 }
