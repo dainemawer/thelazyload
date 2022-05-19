@@ -4,7 +4,7 @@ import { autocomplete, getAlgoliaResults } from '@algolia/autocomplete-js';
 import React, { createElement, Fragment, useEffect, useRef } from 'react';
 import { createRoot } from 'react-dom/client';
 import { searchClient } from '@lib/constants';
-import Image from 'next/image'
+import Image from 'next/image';
 
 export function Autocomplete(props) {
     const containerRef = useRef(null);
@@ -77,7 +77,6 @@ export function ResourceItem({ hit, components }) {
 
 
 const Header = () => {
-
     return (
         <header className="flex container justify-between items-center max-w-7xl mx-auto p-4">
             <div className="flex items-center">
@@ -112,7 +111,6 @@ const Header = () => {
                     </ul>
                 </nav>
                 <Autocomplete
-                    debug={true}
                     placeholder="Search"
                     openOnFocus={false}
                     getSources={({ query }) => [
@@ -156,7 +154,6 @@ const Header = () => {
                         },
                     ]}
                 />
-                <button type="button">Light</button>
             </div>
         </header>
     )

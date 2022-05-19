@@ -1,15 +1,19 @@
-import Link from 'next/link'
+import ArticleCard from '@components/ArticleCard/ArticleCard'
 const ArticleRelated = ({ posts, type }) => {
     return (
         <>
-        <h3>Related</h3>
-            <div className="flex">
+            <h3>You May Also Be Interested In</h3>
+            <div className="grid gap-4 grid-cols-3">
                 {posts && posts.map(post => (
-                    <article className="border-gray-100 border rounded-lg p-4 w-1/3 mr-4 last:mr-0" key={post.id} id={post.id}>
-                        <h4>
-                            <Link href={`/${type}/${post.slug}`}>{post.title}</Link>
-                        </h4>
-                    </article>
+                    <ArticleCard
+                        key={post.id}
+                        id={post.id}
+                        slug={post.slug}
+                        published={post.published_at}
+                        type={post.type}
+                        title={post.title}
+                        metadata={post.metadata}
+                    />
                 ))}
             </div>
         </>

@@ -6,49 +6,53 @@ import { useRouter } from 'next/router'
 import Meta from '@components/Meta/Meta'
 import { getResourcesBySlug, getResource, getRelatedResources } from '@services/resources' 
 import ArticleContent from '@components/ArticleContent/ArticleContent'
-import ArticleExcerpt from '@components/ArticleExcerpt/ArticleExcerpt'
 import ArticleHeader from '@components/ArticleHeader/ArticleHeader'
 import ArticleFooter from '@components/ArticleFooter/ArticleFooter'
 import ArticleMeta from '@components/ArticleMeta/ArticleMeta'
 import ArticleRelated from '@components/ArticleRelated/ArticleRelated'
-import ArticleShare from '@components/ArticleShare/ArticleShare'
-import Newsletter from '@components/Newsletter/Newsletter'
 
 const Resource = ({ resource, related }) => {
     const router = useRouter()
+    const { id, published_at, slug, type, title, metadata, content } = resource
+    const { cover_image, excerpt, tags, author, url } = metadata
+    const readingTime = Math.ceil(resource.content.split(' ').length / 200)
 
-    if (!router.isFallback && !resource?.slug) {
+    if (!router.isFallback && !slug) {
         return <ErrorPage statusCode={404} />
     }
 
-    const { metadata, content } = resource
-    const { cover_image, excerpt, tags, author, url } = metadata
-    const readingTime = Math.ceil(resource.content.split(' ').length / 200)
-    
     return (
         <Layout>
-            <Meta page={resource.title} />
-            <article id={resource.id}>
-                <ArticleHeader
-                    title={resource.title}
-                    published={resource.published_at}
-                    author={author}
-                    reading={`${readingTime} min read`}
-                />
-                <ArticleShare title={resource.title} url={resource.slug} description={excerpt} screenshot={cover_image.url} />
-                <ArticleExcerpt excerpt={excerpt} />
-                {cover_image.url !== null && (
-                    <Image className="rounded-lg" alt="Hero Image" layout="responsive" priority src={cover_image.url} width={896} height={448} />
-                )}
-                {content && <ArticleContent content={content} />}
-                {tags && <ArticleFooter tags={tags} />}
-            </article>
-            <aside>
-                <ArticleMeta url={url} />
-            </aside>
-            
-            {related.length > 0 && <ArticleRelated posts={related} type="resources" />}
-            <Newsletter />
+            <Meta page={title} />
+            <div className="grid gap-8 grid-cols-12 max-w-5xl mx-auto">
+                <div className="col-span-12">
+                    {cover_image.url !== null && (
+                        <Image className="rounded-lg" alt="Hero Image" layout="responsive" priority src={cover_image.url} width={896} height={448} />
+                    )}
+                </div>
+                
+                <article className="col-span-9" id={id}>
+                    <ArticleHeader
+                        title={title}
+                        published={published_at}
+                        author={author}
+                        reading={`${readingTime} min read`}
+                        excerpt={excerpt}
+                        slug={slug}
+                        image={cover_image.url}
+                        type={type}
+                    />
+
+                    {content && <ArticleContent content={content} />}
+                    {tags && <ArticleFooter tags={tags} />}
+                </article>
+                <aside className="col-span-3">
+                    <ArticleMeta title={title} url={url} type={type} />
+                </aside>
+            </div>
+            <div className="max-w-5xl mx-auto">
+                {related.length > 0 && <ArticleRelated posts={related} type={type} />}
+            </div>
         </Layout>
     )
 }

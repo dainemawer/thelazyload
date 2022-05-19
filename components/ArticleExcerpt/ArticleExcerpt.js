@@ -1,6 +1,6 @@
 const ArticleExcerpt = ({ excerpt }) => {
     return (
-        <p className="text-xl mb-0">
+        <p className="text-xl">
             {excerpt}
         </p>
     )

@@ -7,42 +7,43 @@ import { getArticlesBySlug, getArticle, getRelatedArticles } from '@services/art
 import ArticleContent from '@components/ArticleContent/ArticleContent'
 import ArticleHeader from '@components/ArticleHeader/ArticleHeader'
 import ArticleFooter from '@components/ArticleFooter/ArticleFooter'
-import ArticleMeta from '@components/ArticleMeta/ArticleMeta'
 import ArticleRelated from '@components/ArticleRelated/ArticleRelated'
-import ArticleShare from '@components/ArticleShare/ArticleShare'
-import Newsletter from '@components/Newsletter/Newsletter'
 
 const Article = ({ article, related }) => {
     const router = useRouter()
+    const { title, id, slug, type, published_at, metadata, content } = article
+    const { cover_image, excerpt, tags, author } = metadata
+    const readingTime = Math.ceil(content.split(' ').length / 200)
 
-    if (!router.isFallback && !article?.slug) {
+    if (!router.isFallback && !slug) {
         return <ErrorPage statusCode={404} />
     }
 
-    const { metadata, content } = article
-    const { cover_image, excerpt, tags, author } = metadata
-    const readingTime = Math.ceil(content.split(' ').length / 200)
     return (
         <Layout>
-            <Meta page={article.title} />
-            <article className="max-w-3xl mx-auto" id={article.id}>
+            <Meta page={title} />
+            <article className="max-w-4xl mx-auto" id={id}>
                 {cover_image.url !== null && (
                     <Image className="rounded-lg" alt="Hero Image" layout="responsive" priority src={cover_image.url} width={896} height={448} />
                 )}
                 <ArticleHeader
-                    title={article.title}
-                    published={article.published_at}
+                    title={title}
+                    published={published_at}
                     author={author}
                     reading={`${readingTime} min read`}
                     excerpt={excerpt}
+                    slug={slug}
+                    image={cover_image.url}
+                    type={type}
                 />
-                <ArticleShare title={article.title} url={article.slug} type="article" />
                 
                 {content && <ArticleContent content={content} />}
                 {tags && <ArticleFooter tags={tags} />}
             </article>
 
-            {related.length > 0 && <ArticleRelated posts={related} type="articles" />}
+            <div className="max-w-4xl mx-auto">
+                {related.length > 0 && <ArticleRelated posts={related} type={type} />}
+            </div>
         </Layout>
     )
 }

@@ -1,6 +1,6 @@
 module.exports = {
     images: {
-        domains: ['cdn.cosmicjs.com', 'imgix.cosmicjs.com'],
+        domains: ['cdn.cosmicjs.com', 'imgix.cosmicjs.com', 'i.scdn.co', 'pbs.twimg.com'],
     },
     env: {
         MAILJET_API_KEY: process.env.MAILJET_API_KEY,

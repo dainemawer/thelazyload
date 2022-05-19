@@ -2,17 +2,22 @@ import Layout from '@components/Layout/Layout'
 import Meta from '@components/Meta/Meta'
 import { getArticles } from '@services/articles'
 import { getResources } from '@services/resources'
+import { getTags } from '@services/tags'
+import { getTopTracks } from "@lib/spotify"
 import ArticleCard from '@components/ArticleCard/ArticleCard'
 import Link from 'next/link'
 import Image from 'next/image'
 import { toDate } from '@util/content'
 import Newsletter from '@components/Newsletter/Newsletter'
-import MostPopular from '@components/MostPopular/MostPopular'
-import PopularTags from '@components/PopularTags/PopularTags'
-import PlayListOfTheMonth from '@components/Spotify/PlaylistOfTheMonth'
-import UsefulTools from '@components/UsefulTools/UsefulTools'
+import dynamic from 'next/dynamic'
+import { generateRSSFeed } from '@lib/rss'
 
-const Index = ({ articles, resources }) => {
+const UsefulTools = dynamic(() => import('@components/UsefulTools/UsefulTools'))
+const RecentlyPlayedTracks = dynamic(() => import('@components/Spotify/RecentlyPlayedTracks'))
+const PopularTags = dynamic(() => import('@components/PopularTags/PopularTags'))
+const MostPopular = dynamic(() => import('@components/MostPopular/MostPopular'))
+
+const Index = ({ articles, resources, tracks, tags }) => {
     const posts = []
     posts.push(...articles)
     posts.push(...resources)
@@ -67,8 +72,8 @@ const Index = ({ articles, resources }) => {
                     <aside className="md:col-span-3">
                         <Newsletter />
                         <MostPopular />
-                        <PopularTags />
-                        <PlayListOfTheMonth />
+                        <PopularTags tags={tags} />
+                        <RecentlyPlayedTracks tracks={tracks} />
                         <UsefulTools />
                     </aside>
                 </div>
@@ -81,8 +86,26 @@ export async function getStaticProps() {
     const articles = await getArticles() || []
     const resources = await getResources() || []
 
+    const response = await getTopTracks();
+    const { items } = await response.json();
+
+    const tracks = items.slice(0, 5).map((track) => ({
+        artist: track.artists.map((_artist) => _artist.name).join(', '),
+        songUrl: track.external_urls.spotify,
+        title: track.name,
+        album: {
+            artwork: track.album.images[0].url,
+            artwork_width: track.album.images[0].width,
+            artwork_height: track.album.images[0].height,
+        },
+    })) || null;
+
+    const tags = await getTags() || []
+    
+    await generateRSSFeed();
+
     return {
-        props: { articles, resources },
+        props: { articles, resources, tracks, tags },
     }
 }
 
