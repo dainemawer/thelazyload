@@ -1,41 +1,43 @@
 import { bucket } from './cosmic'
 
 export const getArticles = async () => {
-    const data = await bucket.getObjects({
+    await bucket.getObjects({
         query: {
             type: 'articles',
         },
         props: 'id,title,slug,metadata,created_at,published_at,type',
         status: 'all'
     })
-    return data.objects
+    .then(response => response.objects)
+    .catch(error => console.log('getArticles:', error))
 }
 
 export const getArticle = async (slug) => {
     const data = await getArticles()
     const object = await data.find((article) => article.slug === slug)
-    const article = await bucket.getObject({id: object.id})
-
-    return {
-        article: article.object
-    }
+    await bucket.getObject({id: object.id})
+        .then(response => {
+           return {
+                article: response.object
+           }
+        })
+        .catch(error => console.log('getArticle:', error))
 }
 
 export const getRelatedArticles = async (slug) => {
     const articles = await getArticles()
     const article = await articles.find((resource) => resource.slug === slug)
-
     const related = await articles.filter((item) => item.id !== article.id)
 
-    return related
+    return related || []
 }
 
 export const getArticlesBySlug = async () => {
-    const data = await bucket.getObjects({
+    await bucket.getObjects({
         query: {
             type: 'articles',
         },
         props: 'slug',
-    })
-    return data.objects
+    }).then(response => response.objects)
+        .catch(error => console.log('getArticlesBySlug:', error))
 }

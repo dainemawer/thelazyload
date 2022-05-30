@@ -1,44 +1,44 @@
 import { bucket } from './cosmic'
 
 export const getResources = async () => {
-    const data = await bucket.getObjects({
+    await bucket.getObjects({
         query: {
             type: 'resources',
         },
         props: 'id,title,slug,metadata,created_at,published_at,type',
-    })
-
-    return data.objects
+    }).then(response => response.objects)
+        .catch(error => console.log('getResources:',error))
 }
 
 export const getResource = async (slug) => {
     const data = await getResources()
     const object = await data.find((resource) => resource.slug === slug)
-    const resource = await bucket.getObject({ id: object.id })
-
-    return {
-        resource: resource.object
-    }
+    await bucket.getObject({ id: object.id })
+        .then(response => {
+            return {
+                resource: response.object
+            }
+        })
+        .catch(error => console.log('getResource:', error))
 }
 
 export const getRelatedResources = async (slug) => {
     const resources = await getResources()
     const resource = await resources.find((resource) => resource.slug === slug)
-
     const related = await resources.filter((item) => item.id !== resource.id)
 
-    return related
+    return related || []
 }
 
 
 export const getResourcesBySlug = async () => {
-    const data = await bucket.getObjects({
+    await bucket.getObjects({
         query: {
             type: 'resources',
         },
         props: 'slug',
-    })
-    return data.objects
+    }).then(response => response.objects)
+        .catch(error => console.log('getResourcesBySlug:', error));
 }
 
 export const getResourceOpenGraphImage = async (slug) => {
