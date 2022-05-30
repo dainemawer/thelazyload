@@ -5,6 +5,7 @@ import { useRouter } from 'next/router'
 import Meta from '@components/Meta/Meta'
 import { getTagsBySlug, getArticlesByTag, getResourcesByTag, getTag } from '@services/tags'
 import ArticleCard from '@components/ArticleCard/ArticleCard'
+import NoItems from '@components/NoItems/NoItems'
 
 const Tag = ({ tag, articles, resources }) => {
     const router = useRouter()
@@ -19,7 +20,7 @@ const Tag = ({ tag, articles, resources }) => {
             <section id={tag.id}>
                 <h1>{tag.title}</h1>
                 <div>
-                    {resources.length > 0 && (
+                    {resources.length > 0 ? (
                         <>
                             <h3>Resources</h3>
                             {resources.map(resource => (
@@ -34,11 +35,13 @@ const Tag = ({ tag, articles, resources }) => {
                                 />
                             ))}
                         </>
+                    ) : (
+                        <NoItems />
                     )}
                    
                 </div>
                 <div>
-                    {articles.length > 0 && (
+                    {articles.length > 0 ? (
                         <>
                             <h3>Articles</h3>
                             {articles.map(article => (
@@ -53,6 +56,8 @@ const Tag = ({ tag, articles, resources }) => {
                                 />
                             ))}
                         </>
+                    ): (
+                        <NoItems />
                     )}
                 </div>
             </section>
