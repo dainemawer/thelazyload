@@ -85,7 +85,7 @@ const Header = () => {
                         <Logo height="24" width="120" />
                     </a>
                 </Link>
-                <nav>
+                <nav className="hidden lg:block">
                     <ul className="flex">
                         <li>
                             <Link href="/articles"><a className="text-sm transition-colors duration-200 text-zinc-600 hover:bg-indigo-100 rounded-full  hover:text-indigo-700 focus:text-indigo-700 px-4 py-2">Articles</a></Link>
@@ -100,7 +100,7 @@ const Header = () => {
                 </nav>
             </div>
             <div className="flex items-center">
-                <nav className="flex mr-4">
+                <nav className="mr-4 hidden lg:flex">
                     <ul className="flex">
                         <li>
                             <Link href="/shop"><a className="text-sm transition-colors duration-200 text-zinc-600 hover:text-indigo-700 rounded-full hover:bg-indigo-100 focus:text-indigo-700 px-4 py-2">Shop</a></Link>

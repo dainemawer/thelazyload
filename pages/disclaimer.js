@@ -7,6 +7,7 @@ const Disclaimer = ({ disclaimer }) => {
     return (
         <Layout>
             <Meta page="Disclaimer" />
+            <h1>Disclaimer</h1>
             <div dangerouslySetInnerHTML={{ __html: content }} />
         </Layout>
     )

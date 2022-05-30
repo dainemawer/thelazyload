@@ -115,3 +115,15 @@ h6 {
 .tag-css {
     @apply text-sky-600 bg-sky-100
 }
+
+@layer utilities {
+    .no-scrollbar::-webkit-scrollbar {
+      display: none;
+    }
+
+    .no-scrollbar {
+      -ms-overflow-style: none; /* IE and Edge */
+      scrollbar-width: none; /* Firefox */
+    }
+}
+

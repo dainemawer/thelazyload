@@ -40,3 +40,11 @@ export const getResourcesBySlug = async () => {
     })
     return data.objects
 }
+
+export const getResourceOpenGraphImage = async (slug) => {
+    const data = await fetch(`http://localhost:3000/api/opengraph?url=${slug}`, {
+        method: 'POST',
+    });
+
+    return data;
+}
