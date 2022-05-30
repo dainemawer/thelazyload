@@ -3,7 +3,7 @@ const ArticleShare = ({ url, title, description, image, type }) => {
 
     const query = `url=${url}&title=${title}&description=${description}&screenshot=${image}&pubid=${process.env.NEXT_PUBLIC_ADDTHIS_PUBLISHER_ID}`
 
-    const layout = type === 'articles' ? 'justify-end' : 'justify-start'
+    const layout = type === 'articles' ? 'lg:justify-end' : 'lg:justify-start'
 
     return (
         <ul className={`flex items-center ${layout} list-none p-0 w-6/12`}>

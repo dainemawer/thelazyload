@@ -7,6 +7,7 @@ const Privacy = ({ privacy }) => {
     return (
         <Layout>
             <Meta page="Privacy" />
+            <h1>Privacy</h1>
             <div dangerouslySetInnerHTML={{ __html: content }} />
         </Layout>
     )

@@ -33,7 +33,9 @@ const Index = ({ articles, resources, tracks, tags }) => {
                     <figure className="md:mr-8 mb-4 md:m-0">
                         <Link href={`/${posts[0].type}/${posts[0].slug}`}>
                             <a className="block leading-none">
+                            {posts && posts[0].metadata.cover_image.url !== null && (
                                 <Image alt="Article Image" src={posts[0].metadata.cover_image.url} width="896" height="512" priority />
+                            )}
                             </a>
                         </Link>
                     </figure>

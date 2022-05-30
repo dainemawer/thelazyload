@@ -4,7 +4,7 @@
         <title>The lazy Load</title>
         <link>https://thelazyload.com</link>
         <description>The Lazy Load is a web performance blog that attempts to shed light and provide insight on everyday performance issues.</description>
-        <lastBuildDate>Thu, 19 May 2022 10:15:54 GMT</lastBuildDate>
+        <lastBuildDate>Sun, 29 May 2022 06:24:25 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>Feed for Node.js</generator>
         <image>
@@ -13,6 +13,22 @@
             <link>https://thelazyload.com</link>
         </image>
         <copyright>All rights reserved 2022, The Lazy Load</copyright>
+        <item>
+            <title><![CDATA[Some New Article Yay]]></title>
+            <link>https://thelazyload.com/articles/some-new-article-yay</link>
+            <guid>https://thelazyload.com/articles/some-new-article-yay</guid>
+            <pubDate>Mon, 23 May 2022 15:31:06 GMT</pubDate>
+            <description><![CDATA[Excerpt]]></description>
+            <author>hello@thelazyload.com (The Lazy Load)</author>
+        </item>
+        <item>
+            <title><![CDATA[Quisque eget magna id orci lobortis laoreet]]></title>
+            <link>https://thelazyload.com/articles/quisque-eget-magna-id-orci-lobortis-laoreet</link>
+            <guid>https://thelazyload.com/articles/quisque-eget-magna-id-orci-lobortis-laoreet</guid>
+            <pubDate>Fri, 20 May 2022 05:19:53 GMT</pubDate>
+            <description><![CDATA[Phasellus ullamcorper egestas vestibulum. Praesent pellentesque orci non massa malesuada, a pellentesque risus aliquam. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Curabitur eget nulla nisl. Duis molestie placerat lectus, at suscipit mi tincidunt eget.]]></description>
+            <author>hello@thelazyload.com (The Lazy Load)</author>
+        </item>
         <item>
             <title><![CDATA[Lorem ipsum dolor sit amet, consectetur adipiscing elit]]></title>
             <link>https://thelazyload.com/articles/lorem-ipsum</link>

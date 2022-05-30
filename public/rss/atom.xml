@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://thelazyload.com</id>
     <title>The lazy Load</title>
-    <updated>2022-05-19T10:15:54.661Z</updated>
+    <updated>2022-05-29T06:24:25.985Z</updated>
     <generator>Feed for Node.js</generator>
     <author>
         <name>The Lazy Load</name>
@@ -15,6 +15,40 @@
     <logo>https://thelazyload.com/logo.svg</logo>
     <icon>https://thelazyload.com/favicon.png</icon>
     <rights>All rights reserved 2022, The Lazy Load</rights>
+    <entry>
+        <title type="html"><![CDATA[Some New Article Yay]]></title>
+        <id>https://thelazyload.com/articles/some-new-article-yay</id>
+        <link href="https://thelazyload.com/articles/some-new-article-yay"/>
+        <updated>2022-05-23T15:31:06.377Z</updated>
+        <summary type="html"><![CDATA[Excerpt]]></summary>
+        <author>
+            <name>The Lazy Load</name>
+            <email>hello@thelazyload.com</email>
+            <uri>https://twitter.com/iamdainemawer</uri>
+        </author>
+        <contributor>
+            <name>The Lazy Load</name>
+            <email>hello@thelazyload.com</email>
+            <uri>https://twitter.com/iamdainemawer</uri>
+        </contributor>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Quisque eget magna id orci lobortis laoreet]]></title>
+        <id>https://thelazyload.com/articles/quisque-eget-magna-id-orci-lobortis-laoreet</id>
+        <link href="https://thelazyload.com/articles/quisque-eget-magna-id-orci-lobortis-laoreet"/>
+        <updated>2022-05-20T05:19:53.353Z</updated>
+        <summary type="html"><![CDATA[Phasellus ullamcorper egestas vestibulum. Praesent pellentesque orci non massa malesuada, a pellentesque risus aliquam. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Curabitur eget nulla nisl. Duis molestie placerat lectus, at suscipit mi tincidunt eget.]]></summary>
+        <author>
+            <name>The Lazy Load</name>
+            <email>hello@thelazyload.com</email>
+            <uri>https://twitter.com/iamdainemawer</uri>
+        </author>
+        <contributor>
+            <name>The Lazy Load</name>
+            <email>hello@thelazyload.com</email>
+            <uri>https://twitter.com/iamdainemawer</uri>
+        </contributor>
+    </entry>
     <entry>
         <title type="html"><![CDATA[Lorem ipsum dolor sit amet, consectetur adipiscing elit]]></title>
         <id>https://thelazyload.com/articles/lorem-ipsum</id>

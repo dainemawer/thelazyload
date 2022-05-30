@@ -7,6 +7,7 @@ const Terms = ({ terms }) => {
     return (
         <Layout>
             <Meta page="Terms" />
+            <h1>Terms</h1>
             <div dangerouslySetInnerHTML={{ __html: content }} />
         </Layout>
     )

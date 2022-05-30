@@ -10,8 +10,9 @@ import ArticleHeader from '@components/ArticleHeader/ArticleHeader'
 import ArticleFooter from '@components/ArticleFooter/ArticleFooter'
 import ArticleMeta from '@components/ArticleMeta/ArticleMeta'
 import ArticleRelated from '@components/ArticleRelated/ArticleRelated'
+import { fetch } from 'fetch-opengraph';
 
-const Resource = ({ resource, related }) => {
+const Resource = ({ resource, opengraph, related }) => {
     const router = useRouter()
     const { id, published_at, slug, type, title, metadata, content } = resource
     const { cover_image, excerpt, tags, author, url } = metadata
@@ -25,11 +26,6 @@ const Resource = ({ resource, related }) => {
         <Layout>
             <Meta page={title} />
             <div className="grid gap-8 grid-cols-12 max-w-5xl mx-auto">
-                <div className="col-span-12">
-                    {cover_image.url !== null && (
-                        <Image className="rounded-lg" alt="Hero Image" layout="responsive" priority src={cover_image.url} width={896} height={448} />
-                    )}
-                </div>
                 
                 <article className="col-span-9" id={id}>
                     <ArticleHeader
@@ -37,9 +33,9 @@ const Resource = ({ resource, related }) => {
                         published={published_at}
                         author={author}
                         reading={`${readingTime} min read`}
-                        excerpt={excerpt}
+                        excerpt={opengraph?.description}
+                        image={opengraph?.image}
                         slug={slug}
-                        image={cover_image.url}
                         type={type}
                     />
 
@@ -58,8 +54,21 @@ const Resource = ({ resource, related }) => {
 }
 
 export async function getStaticProps({ params }) {
+    let opengraph = {}
     const data = await getResource(params.slug)
     const related = await getRelatedResources(params.slug)
+
+    await fetch(data?.resource?.metadata?.url)
+        .then(response => {
+            opengraph = response;
+        }).catch(error => {
+            if(error.status === 400) {
+                opengraph = {
+                    description: '',
+                    image: '/placeholder.jpg'
+                }
+            }
+        });
 
     return {
         props: {
@@ -67,6 +76,7 @@ export async function getStaticProps({ params }) {
             resource: {
                 ...data.resource,
             },
+            opengraph
         },
     }
 }
