@@ -8,6 +8,7 @@ export const getPages = async () => {
         props: 'id,title,slug',
         status: 'all'
     })
+    
     return data.objects
 }
 

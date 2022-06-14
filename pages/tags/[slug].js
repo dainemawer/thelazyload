@@ -1,5 +1,6 @@
 
 import Layout from '@components/Layout/Layout'
+import Schema from '@components/Schema/Schema'
 import ErrorPage from 'next/error'
 import { useRouter } from 'next/router'
 import Meta from '@components/Meta/Meta'
@@ -17,6 +18,7 @@ const Tag = ({ tag, articles, resources }) => {
     return (
         <Layout>
             <Meta page={tag.title} />
+            <Schema title={tag.title} page="/tags/[slug]" url={`https://thelazyload.com/tags/${tag?.slug}`} />
             <section id={tag.id}>
                 <h1>{tag.title}</h1>
                 <div>

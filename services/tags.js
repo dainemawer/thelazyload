@@ -1,7 +1,7 @@
 import { bucket } from './cosmic'
 
 export const getTags = async () => {
-    await bucket.getObjects({
+    return await bucket.getObjects({
         query: {
             type: 'tags',
         },
@@ -14,7 +14,7 @@ export const getTag = async (slug) => {
     const data = await getTags()
     const object = await data.find((tag) => tag.slug === slug)
     
-    await bucket.getObject({ id: object.id })
+    return await bucket.getObject({ id: object.id })
         .then(response => response.object)
         .catch(error => console.log(error))
 }
@@ -67,7 +67,7 @@ export const getArticlesByTag = async (slug) => {
 }
 
 export const getTagsBySlug = async () => {
-    await bucket.getObjects({
+    return await bucket.getObjects({
         query: {
             type: 'tags',
         },

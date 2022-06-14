@@ -1,6 +1,6 @@
 
 import Layout from '@components/Layout/Layout'
-import Image from 'next/image'
+import Schema from '@components/Schema/Schema'
 import ErrorPage from 'next/error'
 import { useRouter } from 'next/router'
 import Meta from '@components/Meta/Meta'
@@ -25,6 +25,7 @@ const Resource = ({ resource, opengraph, related }) => {
     return (
         <Layout>
             <Meta page={title} />
+            <Schema title={title} page="/resources/[slug]" url={`https://thelazyload.com/tags/${slug}`} image={cover_image?.url} published={published_at} excerpt={excerpt} wordCount={content.split(' ').length} />
             <div className="grid gap-8 grid-cols-12 max-w-5xl mx-auto">
                 
                 <article className="col-span-9" id={id}>

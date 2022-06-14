@@ -1,4 +1,5 @@
 import Layout from '@components/Layout/Layout'
+import Schema from '@components/Schema/Schema'
 import Meta from '@components/Meta/Meta'
 import { getResources } from '@services/resources' 
 import ArticleCard from '@components/ArticleCard/ArticleCard'
@@ -10,6 +11,7 @@ const Resources = ({ resources }) => {
     return (
         <Layout>
             <Meta page="Resources" />
+            <Schema title="Resources" page="/resources" url="https://thelazyload.com/resources" />
             <h1 className="mb-4 mt-14">Resources</h1>
             <h2 className="max-w-2xl mt-0 mb-16 font-normal text-zinc-600">Useful resources for enigneers to manage performance problems on every day projects.</h2>
             <section className={`grid gap-4 ${hasPosts ? 'grid-cols-3' : ''}`}>

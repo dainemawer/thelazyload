@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://thelazyload.com</id>
     <title>The lazy Load</title>
-    <updated>2022-05-30T08:18:14.089Z</updated>
+    <updated>2022-06-14T16:22:20.878Z</updated>
     <generator>Feed for Node.js</generator>
     <author>
         <name>The Lazy Load</name>
@@ -15,4 +15,122 @@
     <logo>https://thelazyload.com/logo.svg</logo>
     <icon>https://thelazyload.com/favicon.png</icon>
     <rights>All rights reserved 2022, The Lazy Load</rights>
+    <entry>
+        <title type="html"><![CDATA[Booh]]></title>
+        <id>https://thelazyload.com/articles/booh</id>
+        <link href="https://thelazyload.com/articles/booh"/>
+        <updated>2022-06-14T15:41:34.563Z</updated>
+        <author>
+            <name>The Lazy Load</name>
+            <email>hello@thelazyload.com</email>
+            <uri>https://twitter.com/iamdainemawer</uri>
+        </author>
+        <contributor>
+            <name>The Lazy Load</name>
+            <email>hello@thelazyload.com</email>
+            <uri>https://twitter.com/iamdainemawer</uri>
+        </contributor>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Some New Article Yay]]></title>
+        <id>https://thelazyload.com/articles/some-new-article-yay</id>
+        <link href="https://thelazyload.com/articles/some-new-article-yay"/>
+        <updated>2022-05-23T15:31:06.377Z</updated>
+        <summary type="html"><![CDATA[Excerpt]]></summary>
+        <author>
+            <name>The Lazy Load</name>
+            <email>hello@thelazyload.com</email>
+            <uri>https://twitter.com/iamdainemawer</uri>
+        </author>
+        <contributor>
+            <name>The Lazy Load</name>
+            <email>hello@thelazyload.com</email>
+            <uri>https://twitter.com/iamdainemawer</uri>
+        </contributor>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Quisque eget magna id orci lobortis laoreet]]></title>
+        <id>https://thelazyload.com/articles/quisque-eget-magna-id-orci-lobortis-laoreet</id>
+        <link href="https://thelazyload.com/articles/quisque-eget-magna-id-orci-lobortis-laoreet"/>
+        <updated>2022-05-20T05:19:53.353Z</updated>
+        <summary type="html"><![CDATA[Phasellus ullamcorper egestas vestibulum. Praesent pellentesque orci non massa malesuada, a pellentesque risus aliquam. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Curabitur eget nulla nisl. Duis molestie placerat lectus, at suscipit mi tincidunt eget.]]></summary>
+        <author>
+            <name>The Lazy Load</name>
+            <email>hello@thelazyload.com</email>
+            <uri>https://twitter.com/iamdainemawer</uri>
+        </author>
+        <contributor>
+            <name>The Lazy Load</name>
+            <email>hello@thelazyload.com</email>
+            <uri>https://twitter.com/iamdainemawer</uri>
+        </contributor>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Lorem ipsum dolor sit amet, consectetur adipiscing elit]]></title>
+        <id>https://thelazyload.com/articles/lorem-ipsum</id>
+        <link href="https://thelazyload.com/articles/lorem-ipsum"/>
+        <updated>2022-06-08T04:58:12.011Z</updated>
+        <summary type="html"><![CDATA[Donec efficitur consequat tempor. Fusce a arcu at nulla fringilla congue. Praesent eget metus semper, auctor nibh sed, egestas sapien]]></summary>
+        <author>
+            <name>The Lazy Load</name>
+            <email>hello@thelazyload.com</email>
+            <uri>https://twitter.com/iamdainemawer</uri>
+        </author>
+        <contributor>
+            <name>The Lazy Load</name>
+            <email>hello@thelazyload.com</email>
+            <uri>https://twitter.com/iamdainemawer</uri>
+        </contributor>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Ut urna dolor, dignissim a dapibus a, congue id lorem]]></title>
+        <id>https://thelazyload.com/resources/ut-urna-dolor-dignissim-a-dapibus-a-congue-id-lorem</id>
+        <link href="https://thelazyload.com/resources/ut-urna-dolor-dignissim-a-dapibus-a-congue-id-lorem"/>
+        <updated>2022-05-06T04:10:34.417Z</updated>
+        <summary type="html"><![CDATA[Maecenas feugiat pulvinar dolor quis tristique. Mauris porttitor in dolor in suscipit. Nunc posuere eros eu metus viverra tincidunt. Aliquam quam est, rutrum interdum sem quis, scelerisque mattis sem]]></summary>
+        <author>
+            <name>The Lazy Load</name>
+            <email>hello@thelazyload.com</email>
+            <uri>https://twitter.com/iamdainemawer</uri>
+        </author>
+        <contributor>
+            <name>The Lazy Load</name>
+            <email>hello@thelazyload.com</email>
+            <uri>https://twitter.com/iamdainemawer</uri>
+        </contributor>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Vestibulum interdum metus ut]]></title>
+        <id>https://thelazyload.com/resources/vestibulum-interdum-metus-ut</id>
+        <link href="https://thelazyload.com/resources/vestibulum-interdum-metus-ut"/>
+        <updated>2022-05-06T04:11:22.303Z</updated>
+        <summary type="html"><![CDATA[Praesent lacus enim, placerat vitae lobortis quis, auctor id libero. Fusce dui lacus, dapibus feugiat tortor nec, lacinia euismod sapien]]></summary>
+        <author>
+            <name>The Lazy Load</name>
+            <email>hello@thelazyload.com</email>
+            <uri>https://twitter.com/iamdainemawer</uri>
+        </author>
+        <contributor>
+            <name>The Lazy Load</name>
+            <email>hello@thelazyload.com</email>
+            <uri>https://twitter.com/iamdainemawer</uri>
+        </contributor>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Donec eget magna quis nunc pharetra malesuada]]></title>
+        <id>https://thelazyload.com/resources/donec-eget-magna-quis-nunc-pharetra-malesuada</id>
+        <link href="https://thelazyload.com/resources/donec-eget-magna-quis-nunc-pharetra-malesuada"/>
+        <updated>2022-05-06T04:13:38.427Z</updated>
+        <summary type="html"><![CDATA[Donec efficitur consequat tempor. Fusce a arcu at nulla fringilla congue. Praesent eget metus semper, auctor nibh sed, egestas sapien.]]></summary>
+        <author>
+            <name>The Lazy Load</name>
+            <email>hello@thelazyload.com</email>
+            <uri>https://twitter.com/iamdainemawer</uri>
+        </author>
+        <contributor>
+            <name>The Lazy Load</name>
+            <email>hello@thelazyload.com</email>
+            <uri>https://twitter.com/iamdainemawer</uri>
+        </contributor>
+    </entry>
 </feed>

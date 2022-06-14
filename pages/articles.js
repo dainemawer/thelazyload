@@ -1,4 +1,5 @@
 import Layout from '@components/Layout/Layout'
+import Schema from '@components/Schema/Schema'
 import Meta from '@components/Meta/Meta'
 import { getArticles } from '@services/articles'
 import ArticleCard from '@components/ArticleCard/ArticleCard'
@@ -10,6 +11,7 @@ const Articles = ({ articles }) => {
     return (
         <Layout>
             <Meta page="Articles" />
+            <Schema title="Articles" page="/articles" url="https://thelazyload.com/articles" />
             <h1 className="mb-4 mt-14">Articles</h1>
             <h2 className="max-w-2xl mt-0 mb-16 font-normal text-zinc-600">Tutorials, research and insights into everyday engineering challenges, with a focus on performance.</h2>
             <section className={`grid gap-4 ${hasPosts ? 'grid-cols-3' : ''}`}>
