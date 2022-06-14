@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import Layout from '@components/Layout/Layout'
+import Schema from '@components/Schema/Schema'
 import Meta from '@components/Meta/Meta'
 import { useForm } from "react-hook-form";
 
@@ -49,6 +50,7 @@ const Submit = () => {
     return (
         <Layout>
             <Meta page="Submit" />
+            <Schema title="Submit" page="/submit" url="https://thelazyload.com/submit" />
             <div className="text-center flex flex-col items-center justify-center mb-40">
                 <span className="block mb-2 uppercase font-bold text-sm text-indigo-700">The Lazy Load</span>
                 <h1 className="m-0 text-5xl max-w-2xl">Lets talk.</h1>

@@ -1,5 +1,6 @@
 import Layout from '@components/Layout/Layout'
 import Meta from '@components/Meta/Meta'
+import Schema from '@components/Schema/Schema'
 import { getArticles } from '@services/articles'
 import { getResources } from '@services/resources'
 import { getTags } from '@services/tags'
@@ -25,6 +26,7 @@ const Index = ({ articles, title, resources, tracks, tags }) => {
     return (
         <Layout>
             <Meta page="The Lazy Load" />
+            <Schema title="Home" page="/" url="https://thelazyload.com" />
             <div className="text-center flex flex-col items-center justify-center mb-28">
                 <span className="block mb-2 uppercase font-bold text-sm text-indigo-700">The Lazy Load</span>
                 <h1 className="m-0 text-5xl max-w-2xl font-extrabold">Insights, tips and resources on web performance.</h1>

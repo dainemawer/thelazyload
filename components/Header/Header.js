@@ -100,16 +100,7 @@ const Header = () => {
                 </nav>
             </div>
             <div className="flex items-center">
-                <nav className="mr-4 hidden lg:flex">
-                    <ul className="flex">
-                        <li>
-                            <Link href="/shop"><a className="text-sm transition-colors duration-200 text-zinc-600 hover:text-indigo-700 rounded-full hover:bg-indigo-100 focus:text-indigo-700 px-4 py-2">Shop</a></Link>
-                        </li>
-                        <li>
-                            <Link href="/uses"><a className="text-sm transition-colors duration-200 text-zinc-600 hover:text-indigo-700 rounded-full hover:bg-indigo-100 focus:text-indigo-700 px-4 py-2">Uses</a></Link>
-                        </li>
-                    </ul>
-                </nav>
+                
                 <Autocomplete
                     placeholder="Search"
                     openOnFocus={false}

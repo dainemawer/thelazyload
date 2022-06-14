@@ -1,7 +1,7 @@
 import { bucket } from './cosmic'
 
 export const getResources = async () => {
-    await bucket.getObjects({
+    return await bucket.getObjects({
         query: {
             type: 'resources',
         },
@@ -13,7 +13,7 @@ export const getResources = async () => {
 export const getResource = async (slug) => {
     const data = await getResources()
     const object = await data.find((resource) => resource.slug === slug)
-    await bucket.getObject({ id: object.id })
+    return await bucket.getObject({ id: object.id })
         .then(response => {
             return {
                 resource: response.object
@@ -32,7 +32,7 @@ export const getRelatedResources = async (slug) => {
 
 
 export const getResourcesBySlug = async () => {
-    await bucket.getObjects({
+    return await bucket.getObjects({
         query: {
             type: 'resources',
         },

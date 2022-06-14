@@ -3,6 +3,11 @@ import Image from 'next/image'
 import { toDate } from '@util/content'
 
 const ArticleHero = ({ type, slug, title, metadata, published }) => {
+    const hasImage = metadata?.cover_image?.url !== null;
+    const hasTags = metadata?.tags?.length > 0;
+    const tagSlug = hasTags ? metadata.tags[0]?.slug : null;
+    const tagTitle = hasTags ? metadata.tags[0]?.title : null;
+
     return (
         <article className="grid md:grid-cols-2 mb-8">
             <figure className="md:mr-8 mb-4 md:m-0">
@@ -15,9 +20,9 @@ const ArticleHero = ({ type, slug, title, metadata, published }) => {
                 </Link>
             </figure>
             <div>
-                <Link href={`/tags/${metadata.tags[0].slug}`}>
-                    <a className={`text-xs no-underline font-bold transition-colors duration-200 rounded-full py-2 px-4 tag-${metadata.tags[0].slug}`}>
-                        #{metadata.tags[0].title}
+                <Link href={`/tags/${tagSlug}`}>
+                    <a className={`text-xs no-underline font-bold transition-colors duration-200 rounded-full py-2 px-4 tag-${tagSlug}`}>
+                        #{tagTitle}
                     </a>
                 </Link>
 
