@@ -1,6 +1,6 @@
 const ArticleContent = ({ content }) => {
     return (
-        <div dangerouslySetInnerHTML={{ __html: content }} />
+        <div className="py-8" dangerouslySetInnerHTML={{ __html: content }} />
     )
 }
 export default ArticleContent

@@ -6,7 +6,7 @@ const ArticleRelated = ({ posts, type }) => {
             <div className="flex overflow-x-scroll -ml-2 no-scrollbar scroll-smooth">
                 {posts && posts.map(post => (
                     <div key={post.id} className="inline-block px-2">
-                        <div className="w-64 max-w-xs overflow-hidden">
+                        <div className="w-72 max-w-xs overflow-hidden">
                             <ArticleCard
                                 id={post.id}
                                 slug={post.slug}

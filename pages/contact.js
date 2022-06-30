@@ -51,9 +51,9 @@ const Submit = () => {
         <Layout>
             <Meta page="Submit" />
             <Schema title="Submit" page="/submit" url="https://thelazyload.com/submit" />
-            <div className="text-center flex flex-col items-center justify-center mb-40">
+            <div className="text-center flex flex-col items-center justify-center md:mb-40">
                 <span className="block mb-2 uppercase font-bold text-sm text-indigo-700">The Lazy Load</span>
-                <h1 className="m-0 text-5xl max-w-2xl">Lets talk.</h1>
+                <h1 className="m-0 text-4xl md:text-5xl max-w-2xl">Lets talk.</h1>
                 <h2 className="text-base font-normal max-w-md leading-loose text-zinc-600">Have an idea? Got a really helpful resource? Or do you just want to send some kudos? I want to hear from you!</h2>
             </div>
             <section className="mx-auto max-w-lg">

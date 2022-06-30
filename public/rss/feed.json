@@ -11,21 +11,11 @@
     },
     "items": [
         {
-            "id": "https://thelazyload.com/articles/booh",
-            "url": "https://thelazyload.com/articles/booh",
-            "title": "Booh",
-            "date_modified": "2022-06-14T15:41:34.563Z",
-            "author": {
-                "name": "The Lazy Load",
-                "url": "https://twitter.com/iamdainemawer"
-            }
-        },
-        {
             "id": "https://thelazyload.com/articles/some-new-article-yay",
             "url": "https://thelazyload.com/articles/some-new-article-yay",
             "title": "Some New Article Yay",
             "summary": "Excerpt",
-            "date_modified": "2022-05-23T15:31:06.377Z",
+            "date_modified": "2022-06-17T04:50:04.195Z",
             "author": {
                 "name": "The Lazy Load",
                 "url": "https://twitter.com/iamdainemawer"

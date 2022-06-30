@@ -2,11 +2,8 @@ import {
     createAutocomplete,
 } from '@algolia/autocomplete-core';
 import { getAlgoliaResults } from '@algolia/autocomplete-preset-algolia';
-import { useState, useMemo, useRef, useEffect } from 'react';
+import { useState, useMemo } from 'react';
 import { searchClient } from '@lib/constants'; 
-import { Highlight } from 'react-instantsearch-dom';
-import Link from 'next/link';
-import Image from 'next/image';
 
 export function AutoComplete(props) {
     const [autocompleteState, setAutocompleteState] = useState({

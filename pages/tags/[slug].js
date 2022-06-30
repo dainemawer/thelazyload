@@ -25,17 +25,19 @@ const Tag = ({ tag, articles, resources }) => {
                     {resources.length > 0 ? (
                         <>
                             <h3>Resources</h3>
-                            {resources.map(resource => (
-                                <ArticleCard
-                                    key={resource.id}
-                                    id={resource.id}
-                                    title={resource.title}
-                                    type="resources"
-                                    slug={resource.slug}
-                                    metadata={resource.metadata}
-                                    published={resource.published_at}
-                                />
-                            ))}
+                            <div className="grid md:grid-cols-3 mb-8 gap-8">
+                                {resources.map(resource => (
+                                    <ArticleCard
+                                        key={resource.id}
+                                        id={resource.id}
+                                        title={resource.title}
+                                        type="resources"
+                                        slug={resource.slug}
+                                        metadata={resource.metadata}
+                                        published={resource.published_at}
+                                    />
+                                ))}
+                            </div>
                         </>
                     ) : (
                         <NoItems />
@@ -43,20 +45,22 @@ const Tag = ({ tag, articles, resources }) => {
                    
                 </div>
                 <div>
-                    {articles.length > 0 ? (
+                    <h3>Articles</h3>
+                    {articles && articles.length > 0 ? (
                         <>
-                            <h3>Articles</h3>
-                            {articles.map(article => (
-                                <ArticleCard
-                                    key={article.id}
-                                    id={article.id}
-                                    title={article.title}
-                                    type="articles"
-                                    slug={article.slug}
-                                    metadata={article.metadata}
-                                    published={article.published_at}
-                                />
-                            ))}
+                            <div className="grid md-grid-cols-3">
+                                {articles.map(article => (
+                                    <ArticleCard
+                                        key={article.id}
+                                        id={article.id}
+                                        title={article.title}
+                                        type="articles"
+                                        slug={article.slug}
+                                        metadata={article.metadata}
+                                        published={article.published_at}
+                                    />
+                                ))}
+                            </div>
                         </>
                     ): (
                         <NoItems />

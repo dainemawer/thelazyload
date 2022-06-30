@@ -77,7 +77,7 @@ h6 {
 }
 
 .aa-ItemTitle {
-    @apply text-sm
+    @apply text-sm flex items-start flex-col
 }
 
 .aa-Input {
@@ -85,11 +85,11 @@ h6 {
 }
 
 .aa-DetachedSearchButton {
-    @apply flex items-center transition-colors duration-200 rounded-full hover:bg-indigo-700 bg-indigo-100 hover:text-white focus:text-white px-6 py-2;
+    @apply flex items-center transition-colors duration-200 rounded-full hover:bg-indigo-700 bg-indigo-100 hover:text-white focus:text-white px-2 md:px-6 py-2;
 }
 
 .aa-DetachedSearchButtonPlaceholder {
-    @apply text-sm ml-2
+    @apply text-sm ml-2 hidden md:inline
 }
 
 .aa-SubmitIcon {
@@ -101,7 +101,7 @@ h6 {
 }
 
 .aa-DetachedContainer {
-    @apply absolute bg-white rounded-lg right-2/4 translate-x-2/4 p-8 max-w-2xl w-full
+    @apply absolute bg-white rounded-lg right-2/4 translate-x-2/4 p-8 md:max-w-2xl w-80 sm:w-96 md:w-full
 }
 
 .aa-Detached {
@@ -109,11 +109,11 @@ h6 {
 }
 
 .tag-html {
-    @apply text-green-600 bg-green-100
+    @apply text-green-900 bg-green-100
 }
 
 .tag-css {
-    @apply text-sky-600 bg-sky-100
+    @apply text-sky-900 bg-sky-100
 }
 
 @layer utilities {

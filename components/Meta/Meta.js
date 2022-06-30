@@ -4,7 +4,7 @@ import { isWindow } from '@util/dom'
 import { isHome } from '@util/router'
 import { SITE_TITLE } from '@lib/constants'
 
-const Meta = ({ page }) => {
+const Meta = ({ page, canonical }) => {
     const router = useRouter()
     const host = isWindow && window.location.host
     const protocol = isWindow && window.location.protocol
@@ -20,6 +20,7 @@ const Meta = ({ page }) => {
                 content="width=device-width, initial-scale=1"
             />
             <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+            {canonical && <link rel="canonical" href={canonical} />}
             <meta name="theme-color" content="#000000" />
             <meta name="description" content="The Lazy Load is a web performance blog that attempts to shed light and provide insight on everyday performance issues." />
 

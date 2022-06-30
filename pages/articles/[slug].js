@@ -23,7 +23,7 @@ const Article = ({ article, related }) => {
     return (
         <Layout>
             <Meta page={title} />
-            <Schema title={title} page="/resources/[slug]" url={`https://thelazyload.com/tags/${slug}`} image={metadata?.cover_image?.url} published={published_at} excerpt={excerpt} wordCount={content.split(' ').length} />
+            <Schema title={title} page="/resources/[slug]" url={`https://thelazyload.com/articles/${slug}`} image={metadata?.cover_image?.url} published={published_at} excerpt={excerpt} wordCount={content.split(' ').length} />
             <article className="max-w-4xl mx-auto" id={id}>
                 {cover_image.url !== null && (
                     <Image className="rounded-lg" alt="Hero Image" layout="responsive" priority src={cover_image.url} width={896} height={448} />

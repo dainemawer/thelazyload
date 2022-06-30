@@ -8,7 +8,7 @@ const RecentlyPlayedTracks = ({ tracks }) => {
                 {tracks.map(track => (
                     <div className="flex flex-col mb-2" key={track.title}>
                         <a className="flex text-sm no-underline hover:opacity-75 focus:opacity-75 transition-opacity duration-200" href={track.songUrl} target="_blank" rel="noopener noreferrer">
-                            <Image className="w-1/3" alt="Album" src={track.album.artwork} loading="lazy" width={65} height={65} />
+                            <Image alt="Album" layout="fixed" src={track.album.artwork} loading="lazy" width="65" height="65" />
                             <div className="w-2/3 ml-2">
                                 <span>{track.title}</span>
                                 <span className="block text-xs text-gray-500">{track.artist}</span>

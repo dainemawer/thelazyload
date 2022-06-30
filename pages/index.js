@@ -27,9 +27,9 @@ const Index = ({ articles, title, resources, tracks, tags }) => {
         <Layout>
             <Meta page="The Lazy Load" />
             <Schema title="Home" page="/" url="https://thelazyload.com" />
-            <div className="text-center flex flex-col items-center justify-center mb-28">
+            <div className="text-left md:text-center flex flex-col items-start md:items-center justify-start md:justify-center md:mb-28">
                 <span className="block mb-2 uppercase font-bold text-sm text-indigo-700">The Lazy Load</span>
-                <h1 className="m-0 text-5xl max-w-2xl font-extrabold">Insights, tips and resources on web performance.</h1>
+                <h1 className="m-0 text-4xl md:text-5xl max-w-2xl font-extrabold">Insights, tips and resources on web performance.</h1>
             </div>
             <div>
                 {hasPosts ? (
@@ -43,10 +43,10 @@ const Index = ({ articles, title, resources, tracks, tags }) => {
                 ) : (
                     <NoItems />
                 )}
-                <h3 className="text-2xl">Recent Articles</h3>
-                <div className="grid border-t border-gray-100 pt-8 gap-8 md:grid-cols-12">
+                <h3 className="text-xl md:text-2xl">Recent Articles</h3>
+                <div className="grid border-t border-gray-100 pt-8 gap-8 lg:grid-cols-12">
                     
-                    <section className={`${hasPosts ? 'md:grid-cols-2' : ''} grid md:col-span-9 gap-4`}>
+                    <section className={`${hasPosts ? 'md:grid-cols-2' : ''} grid lg:col-span-9 gap-4`}>
                         {hasPosts ? (
                             <>
                                 {posts.slice(1).map(post => (
@@ -66,7 +66,7 @@ const Index = ({ articles, title, resources, tracks, tags }) => {
                         )}
                         
                     </section>
-                    <aside className="md:col-span-3">
+                    <aside className="lg:col-span-3">
                         <Newsletter />
                         <MostPopular />
                         <PopularTags tags={tags} />

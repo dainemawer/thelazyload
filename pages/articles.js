@@ -12,9 +12,9 @@ const Articles = ({ articles }) => {
         <Layout>
             <Meta page="Articles" />
             <Schema title="Articles" page="/articles" url="https://thelazyload.com/articles" />
-            <h1 className="mb-4 mt-14">Articles</h1>
-            <h2 className="max-w-2xl mt-0 mb-16 font-normal text-zinc-600">Tutorials, research and insights into everyday engineering challenges, with a focus on performance.</h2>
-            <section className={`grid gap-4 ${hasPosts ? 'grid-cols-3' : ''}`}>
+            <h1 className="md:mb-4 md:mt-14">Articles</h1>
+            <h2 className="max-w-2xl mt-0 md:mb-16 font-normal text-zinc-600">Tutorials, research and insights into everyday engineering challenges, with a focus on performance.</h2>
+            <section className={`grid gap-4 lg:gap-8 ${hasPosts ? 'md:grid-cols-3' : ''}`}>
                 {hasPosts ? (
                     <>
                         {articles.map(article => (

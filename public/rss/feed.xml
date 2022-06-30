@@ -4,7 +4,7 @@
         <title>The lazy Load</title>
         <link>https://thelazyload.com</link>
         <description>The Lazy Load is a web performance blog that attempts to shed light and provide insight on everyday performance issues.</description>
-        <lastBuildDate>Tue, 14 Jun 2022 16:22:20 GMT</lastBuildDate>
+        <lastBuildDate>Thu, 30 Jun 2022 03:38:06 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>Feed for Node.js</generator>
         <image>
@@ -14,17 +14,10 @@
         </image>
         <copyright>All rights reserved 2022, The Lazy Load</copyright>
         <item>
-            <title><![CDATA[Booh]]></title>
-            <link>https://thelazyload.com/articles/booh</link>
-            <guid>https://thelazyload.com/articles/booh</guid>
-            <pubDate>Tue, 14 Jun 2022 15:41:34 GMT</pubDate>
-            <author>hello@thelazyload.com (The Lazy Load)</author>
-        </item>
-        <item>
             <title><![CDATA[Some New Article Yay]]></title>
             <link>https://thelazyload.com/articles/some-new-article-yay</link>
             <guid>https://thelazyload.com/articles/some-new-article-yay</guid>
-            <pubDate>Mon, 23 May 2022 15:31:06 GMT</pubDate>
+            <pubDate>Fri, 17 Jun 2022 04:50:04 GMT</pubDate>
             <description><![CDATA[Excerpt]]></description>
             <author>hello@thelazyload.com (The Lazy Load)</author>
         </item>

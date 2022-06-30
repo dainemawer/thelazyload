@@ -7,7 +7,7 @@ const Footer = () => {
             <p className="text-sm">
                 <a className="text-xs md:text-sm transition-colors duration-200 px-4 py-2 flex items-center hover:text-indigo-700 focus:text-indigo-700" href="https://dainemawer.com" rel="noopener noreferrer" target="_blank">
                     <Image className="rounded-full" src="https://pbs.twimg.com/profile_images/1496012556145680385/sZxWdamh_400x400.jpg" width={25} height={25} alt="Daine Mawer" />
-                    <span className="inline-block ml-2">built by dainemawer</span>
+                    <span className="hidden md:inline-block ml-2">built by dainemawer</span>
                 </a> 
             </p>
             <div>

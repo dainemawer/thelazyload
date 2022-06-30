@@ -10,7 +10,7 @@ import ArticleHeader from '@components/ArticleHeader/ArticleHeader'
 import ArticleFooter from '@components/ArticleFooter/ArticleFooter'
 import ArticleMeta from '@components/ArticleMeta/ArticleMeta'
 import ArticleRelated from '@components/ArticleRelated/ArticleRelated'
-import { fetch } from 'fetch-opengraph';
+import { fetch as fetchOpengraph } from 'fetch-opengraph';
 
 const Resource = ({ resource, opengraph, related }) => {
     const router = useRouter()
@@ -24,8 +24,8 @@ const Resource = ({ resource, opengraph, related }) => {
 
     return (
         <Layout>
-            <Meta page={title} />
-            <Schema title={title} page="/resources/[slug]" url={`https://thelazyload.com/tags/${slug}`} image={cover_image?.url} published={published_at} excerpt={excerpt} wordCount={content.split(' ').length} />
+            <Meta page={title} canonical={url} />
+            <Schema title={title} page="/resources/[slug]" url={`https://thelazyload.com/resources/${slug}`} image={cover_image?.url} published={published_at} excerpt={excerpt} wordCount={content.split(' ').length} />
             <div className="grid gap-8 grid-cols-12 max-w-5xl mx-auto">
                 
                 <article className="col-span-9" id={id}>
@@ -33,7 +33,6 @@ const Resource = ({ resource, opengraph, related }) => {
                         title={title}
                         published={published_at}
                         author={author}
-                        reading={`${readingTime} min read`}
                         excerpt={opengraph?.description}
                         image={opengraph?.image}
                         slug={slug}
@@ -59,7 +58,7 @@ export async function getStaticProps({ params }) {
     const data = await getResource(params.slug)
     const related = await getRelatedResources(params.slug)
 
-    await fetch(data?.resource?.metadata?.url)
+    await fetchOpengraph(data?.resource?.metadata?.url)
         .then(response => {
             opengraph = response;
         }).catch(error => {

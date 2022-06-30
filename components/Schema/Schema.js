@@ -22,83 +22,96 @@ const Schema = ({ title, url, page, published, image, excerpt, wordCount }) => {
         <Head>
             {pages.includes(page) && (
                 <script type="application/ld+json">
-                    {`
-                        {
-                            "@context": "https://schema.org",
-                            "@graph": [
-                                {
-                                    "@type": "Website",
-                                    "name": "The Lazy Load",
-                                    "sameAs": [
-                                        "https://twitter.com/iamdainemawer"
-                                    ],
-                                    "logo": {
-                                        "@type": "ImageObject",
-                                        "@id": "${url}/#logo",
-                                        "inLanguage": "en-US",
-                                        "url": "${url}/og-image.png",
-                                        "width": "1200",
-                                        "height": "630",
-                                        "caption": "The Lazy Load"
-                                    },
-                                    "image": {
-                                        "@id": "${url}/#logo"
-                                    },
-                                    "foundingDate": "2022",
-                                    "masthead": "https://thelazyload.com/contact",
-                                },
-                                {
-                                    "@type": "WebSite",
-                                    "@id": "${url}/#website",
-                                    "url": "${url}",
-                                    "name": "The Lazy Load",
-                                    "description": "The Lazy Load is a web performance blog that attempts to shed light and provide insight on everyday performance issues.",
-                                    "publisher": {
-                                        "@id": "${url}/#organization"
-                                    },
-                                     "potentialAction": [
-                                        {
-                                            "@type": "SearchAction",
-                                            "target": {
-                                                "@type":"EntryPoint",
-                                                "urlTemplate":"https://thelazyload.com/?s={search_term_string}"
-                                            },
-                                            "query-input":"required name=search_term_string"
-                                        }
-                                    ],
+                    {`{
+                        "@context": "https://schema.org",
+                        "@graph": [
+                            {
+                                "@type": "NewsMediaOrganization",
+                                "@id": "${url}/#organization",
+                                "name": "The Lazy Load",
+                                "url": "${url}/",
+                                "sameAs": [
+                                    "https://twitter.com/iamdainemawer"
+                                ],
+                                "logo": {
+                                    "@type": "ImageObject",
+                                    "@id": "${url}/#logo",
                                     "inLanguage": "en-US",
+                                    "url": "${url}/og-image.jpg",
+                                    "contentUrl": "${url}/og-image.jpg",
+                                    "width": 1200,
+                                    "height": 630,
+                                    "caption": "The Lazy Load"
                                 },
-                                {
-                                    "@type":"CollectionPage",
-                                    "@id":"${url}/#webpage",
-                                    "url":"${url}",
-                                    "name":"The Lazy Load",
-                                    "isPartOf":{
-                                        "@id":"${url}/#website"
-                                    },
-                                    "about":{
-                                        "@id":"${url}/#organization"
-                                    },
-                                    "description": "The Lazy Load is a web performance blog that attempts to shed light and provide insight on everyday performance issues.",
-                                    "breadcrumb":{
-                                        "@id":"${url}/#breadcrumb"
-                                    },
-                                    "inLanguage":"en-US",
-                                    "potentialAction": [
-                                        {
-                                            "@type":"ReadAction",
-                                            "target":[
-                                                "${url}"
-                                            ]
-                                        }
-                                    ]
-                                }
-                            ],
-                        }
-                    `.replace(/\s+/g, '')}
+                                "image": {
+                                    "@id": "${url}/#logo"
+                                },
+                                "foundingDate": "2007",
+                                "masthead": "${url}/about/"
+                            },
+                            {
+                                "@type": "WebSite",
+                                "@id": "${url}/#website",
+                                "url": "${url}/",
+                                "name": "The Lazy Load",
+                                "description": "The Lazy Load is a web performance blog that attempts to shed light and provide insight on everyday performance issues.",
+                                "publisher": {
+                                    "@id": "${url}/#organization"
+                                },
+                                "potentialAction": [
+                                    {
+                                        "@type": "SearchAction",
+                                        "target": {
+                                            "@type": "EntryPoint",
+                                            "urlTemplate": "${url}/?s={search_term_string}"
+                                        },
+                                        "query-input": "required name=search_term_string"
+                                    }
+                                ],
+                                "inLanguage": "en-US"
+                            },
+                            {
+                                "@type": "CollectionPage",
+                                "@id": "${url}/#webpage",
+                                "url": "${url}/",
+                                "name": "The Lazy Load - a web performance blog that attempts to shed light and provide insight on everyday performance issues.",
+                                "isPartOf": {
+                                    "@id": "${url}/#website"
+                                },
+                                "about": {
+                                    "@id": "${url}/#organization"
+                                },
+                                "description": "The Lazy Load is a web performance blog that attempts to shed light and provide insight on everyday performance issues.",
+                                "breadcrumb": {
+                                    "@id": "${url}/#breadcrumb"
+                                },
+                                "inLanguage": "en-US",
+                                "potentialAction": [
+                                    {
+                                        "@type": "ReadAction",
+                                        "target": [
+                                            "${url}/"
+                                        ]
+                                    }
+                                ]
+                            },
+                            {
+                                "@type": "BreadcrumbList",
+                                "@id": "${url}/#breadcrumb",
+                                "itemListElement": [
+                                    {
+                                        "@type": "ListItem",
+                                        "position": 1,
+                                        "name": "Home"
+                                    }
+                                ]
+                            }
+                        ]
+                    }`.replace(/\n\s+/g, '')}
                 </script>
             )}
 
+            {console.log(articles)}
             {articles.includes(page) && (
                 <script type="application/ld+json">
                     {`
@@ -107,9 +120,9 @@ const Schema = ({ title, url, page, published, image, excerpt, wordCount }) => {
                             "@graph": [
                                 {
                                     "@type": "NewsMediaOrganization",
-                                    "@id":"https://thelazyload.com/#organization",
+                                    "@id": "${url}/#organization",
                                     "name": "The Lazy Load",
-                                    "url": "${url}",
+                                    "url": "${url}/",
                                     "sameAs": [
                                         "https://twitter.com/iamdainemawer"
                                     ],
@@ -117,141 +130,153 @@ const Schema = ({ title, url, page, published, image, excerpt, wordCount }) => {
                                         "@type": "ImageObject",
                                         "@id": "${url}/#logo",
                                         "inLanguage": "en-US",
-                                        "url": "${url}/og-image.png",
-                                        "width": "1200",
-                                        "height": "630"
+                                        "url": "https://thelazyload.com/og-image.jpg",
+                                        "contentUrl": "https://thelazyload.com/og-image.jpg",
+                                        "width": 350,
+                                        "height": 60,
                                         "caption": "The Lazy Load"
                                     },
                                     "image": {
                                         "@id": "${url}/#logo"
                                     },
                                     "foundingDate": "2022",
-                                    "masthead": "https://thelazyload.com/contact",
+                                    "masthead": "${url}/"
                                 },
                                 {
                                     "@type": "WebSite",
                                     "@id": "${url}/#website",
-                                    "url": "${url}",
+                                    "url": "${url}/",
                                     "name": "The Lazy Load",
                                     "description": "The Lazy Load is a web performance blog that attempts to shed light and provide insight on everyday performance issues.",
                                     "publisher": {
                                         "@id": "${url}/#organization"
                                     },
-                                     "potentialAction": [
+                                    "potentialAction": [
                                         {
                                             "@type": "SearchAction",
                                             "target": {
-                                                "@type":"EntryPoint",
-                                                "urlTemplate":"https://thelazyload.com/?s={search_term_string}"
+                                                "@type": "EntryPoint",
+                                                "urlTemplate": "${url}/?s={search_term_string}"
                                             },
-                                            "query-input":"required name=search_term_string"
+                                            "query-input": "required name=search_term_string"
                                         }
                                     ],
-                                    "inLanguage": "en-US",
+                                    "inLanguage": "en-US"
                                 },
                                 {
-                                    "@type":"ImageObject",
-                                    "@id":"${url}/#primaryimage",
-                                    "inLanguage":"en-US",
-                                    "url":"${image}",
-                                    "contentUrl":"${image}",
+                                    "@type": "ImageObject",
+                                    "@id": "${url}/#primaryimage",
+                                    "inLanguage": "en-US",
+                                    "url": "${image}",
+                                    "contentUrl": "${image}",
                                     "width": 896,
                                     "height": 448,
-                                    "caption":"${title}"
+                                    "caption": "${title}"
                                 },
                                 {
-                                    "@type":"WebPage",
-                                    "@id":"${url}/#webpage",
-                                    "url":"${url}",
-                                    "name":"${title}",
-                                    "isPartOf":{
-                                        "@id":"https://thelazyload.com/#website"
+                                    "@type": "WebPage",
+                                    "@id": "${url}/#webpage",
+                                    "url": "${url}",
+                                    "name": "${title} - The Lazy Load",
+                                    "isPartOf": {
+                                        "@id": "${url}/#website"
                                     },
-                                    "primaryImageOfPage":{
-                                        "@id":"${url}/#primaryimage"
+                                    "primaryImageOfPage": {
+                                        "@id": "${url}/#primaryimage"
                                     },
-                                    "datePublished":"${published}",
-                                    "dateModified":"2022-06-07T13:22:09+00:00",
-                                    "description":"${url}",
-                                    "breadcrumb":{
-                                        "@id":"${url}/#breadcrumb"
+                                    "datePublished": "${published}",
+                                    "dateModified": "${published}",
+                                    "breadcrumb": {
+                                        "@id": "${url}/#breadcrumb"
                                     },
-                                    "inLanguage":"en-US",
-                                    "potentialAction":[
+                                    "inLanguage": "en-US",
+                                    "potentialAction": [
                                         {
-                                        "@type":"ReadAction",
-                                        "target":[
-                                            "${url}"
-                                        ]
+                                            "@type": "ReadAction",
+                                            "target": [
+                                                "${url}"
+                                            ]
                                         }
                                     ]
                                 },
                                 {
-                                    "@type":[
+                                    "@type": "BreadcrumbList",
+                                    "@id": "${url}/#breadcrumb",
+                                    "itemListElement": [
+                                        {
+                                            "@type": "ListItem",
+                                            "position": 1,
+                                            "name": "Home",
+                                            "item": "https://thelazyload.com/"
+                                        },
+                                        {
+                                            "@type": "ListItem",
+                                            "position": 2,
+                                            "name": "${title}"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "@type": [
                                         "Article",
                                         "NewsArticle"
                                     ],
-                                    "@id":"${url}/#article",
-                                    "isPartOf":{
-                                        "@id":"${url}/#webpage"
+                                    "@id": "${url}/#article",
+                                    "isPartOf": {
+                                        "@id": "${url}/#webpage"
                                     },
-                                    "author":{
-                                        "@id":"https://thelazyload.com/#/schema/person/0af9ea856982f6aea2cbc90d47800284"
+                                    "author": {
+                                        "@id": "${url}/#/schema/person/7d31fbd1bce02c8aba2e62c876a08a7c"
                                     },
-                                    "headline":"${title}",
-                                    "datePublished":"${published}",
-                                    "dateModified":"2022-06-07T13:22:09+00:00",
-                                    "mainEntityOfPage":{
-                                        "@id":"${url}/#webpage"
+                                    "headline": "${title}",
+                                    "datePublished": "${published}",
+                                    "dateModified": "${published}",
+                                    "mainEntityOfPage": {
+                                        "@id": "${url}/#webpage"
                                     },
-                                    "wordCount": ${wordCount},
-                                    "commentCount":0,
-                                    "publisher":{
-                                        "@id":"https://thelazyload.com/#organization"
+                                    "wordCount": 315,
+                                    "commentCount": 0,
+                                    "publisher": {
+                                        "@id": "${url}/#organization"
                                     },
-                                    "image":{
-                                        "@id":"${url}/#primaryimage"
+                                    "image": {
+                                        "@id": "${url}/#primaryimage"
                                     },
-                                    "thumbnailUrl":"${image}",
-                                    "articleSection":[
+                                    "thumbnailUrl": "${image}",
+                                    "articleSection": [
                                         "News"
                                     ],
-                                    "inLanguage":"en-US",
-                                    "potentialAction":[
+                                    "inLanguage": "en-US",
+                                    "potentialAction": [
                                         {
-                                        "@type":"CommentAction",
-                                        "name":"Comment",
-                                        "target":[
-                                            "${url}/#respond"
-                                        ]
+                                            "@type": "CommentAction",
+                                            "name": "Comment",
+                                            "target": [
+                                                "${url}/#respond"
+                                            ]
                                         }
                                     ],
-                                    "copyrightYear":"2022",
-                                    "copyrightHolder":{
-                                        "@id":"https://thelazyload.com/#organization"
-                                    },
+                                    "copyrightYear": "2022",
+                                    "copyrightHolder": {
+                                        "@id": "https://thelazyload.com/#organization"
+                                    }
                                 },
                                 {
-                                    "@type":"Person",
-                                    "@id":"https://thelazyload.com/#/schema/person/0af9ea856982f6aea2cbc90d47800284",
-                                    "name":"Michael Potuck",
-                                    "image":{
-                                        "@type":"ImageObject",
-                                        "@id":"https://9to5mac.com/#personlogo",
-                                        "inLanguage":"en-US",
-                                        "url":"https://secure.gravatar.com/avatar/617382fa123c4948681a44755a0146ca?s=96&d=mm&r=r",
-                                        "contentUrl":"https://secure.gravatar.com/avatar/617382fa123c4948681a44755a0146ca?s=96&d=mm&r=r",
-                                        "caption":"Michael Potuck"
+                                    "@type": "Person",
+                                    "@id": "${url}/#/schema/person/7d31fbd1bce02c8aba2e62c876a08a7c",
+                                    "name": "Daine Mawer",
+                                    "image": {
+                                        "@type": "ImageObject",
+                                        "@id": "${url}/#personlogo",
+                                        "inLanguage": "en-US",
+                                        "url": "https://pbs.twimg.com/profile_images/1496012556145680385/sZxWdamh_400x400.jpg",
+                                        "contentUrl": "https://pbs.twimg.com/profile_images/1496012556145680385/sZxWdamh_400x400.jpg",
+                                        "caption": "Daine Mawer"
                                     },
-                                    "description":"Michael is an editor for 9to5Mac. Since joining in 2016 he has written more than 3,000 articles including breaking news, reviews, and detailed comparisons and tutorials. Michael has also appeared on the 9to5Mac Watch Time podcast with Zac Hall and TWiT's Tech News Weekly. Reach out to Michael with tips, deliberations, typos, or feedback at potuck@9to5mac.com",
-                                    "sameAs":[
-                                        "https://twitter.com/iamdainemawer"
-                                    ],
-                                    "url":"https://9to5mac.com/author/michaelpotuck/"
+                                    "url": "${url}"
                                 }
-                            ],
-                        }
-                    `.replace(/\s+/g, '')}
+                            ]
+                        }`.replace(/\n\s+/g, '') }
                 </script>
             )}
         </Head>

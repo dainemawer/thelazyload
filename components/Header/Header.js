@@ -49,7 +49,7 @@ export function ArticleItem({ hit, components }) {
                     <div className="aa-ItemTitle ml-4">
                         <h3 className="font-bold mb-2"><components.Highlight hit={hit} attribute="title" /></h3>
                         {hit.tags.length > 0 && <span className={`text-xs inline-block float-right font-bold text-white no-underline transition-colors duration-200 rounded-full py-1 px-2 tag-${hit.tags[0].toLowerCase()}`}>#{hit.tags[0]}</span>}
-                        {hit.excerpt && <div className="text-xs">{hit.excerpt}</div>}
+                        {hit.excerpt && <div className="text-xs inline-block mt-4">{hit.excerpt}</div>}
                     </div>
                 </div>
             </a>
