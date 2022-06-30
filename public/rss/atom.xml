@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://thelazyload.com</id>
     <title>The lazy Load</title>
-    <updated>2022-06-30T03:38:06.225Z</updated>
+    <updated>2022-06-30T04:15:45.916Z</updated>
     <generator>Feed for Node.js</generator>
     <author>
         <name>The Lazy Load</name>
@@ -55,6 +55,22 @@
         <link href="https://thelazyload.com/articles/lorem-ipsum"/>
         <updated>2022-06-08T04:58:12.011Z</updated>
         <summary type="html"><![CDATA[Donec efficitur consequat tempor. Fusce a arcu at nulla fringilla congue. Praesent eget metus semper, auctor nibh sed, egestas sapien]]></summary>
+        <author>
+            <name>The Lazy Load</name>
+            <email>hello@thelazyload.com</email>
+            <uri>https://twitter.com/iamdainemawer</uri>
+        </author>
+        <contributor>
+            <name>The Lazy Load</name>
+            <email>hello@thelazyload.com</email>
+            <uri>https://twitter.com/iamdainemawer</uri>
+        </contributor>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Real World Performance Budgets]]></title>
+        <id>https://thelazyload.com/resources/real-world-performance-budgets</id>
+        <link href="https://thelazyload.com/resources/real-world-performance-budgets"/>
+        <updated>2022-06-30T04:12:04.859Z</updated>
         <author>
             <name>The Lazy Load</name>
             <email>hello@thelazyload.com</email>
