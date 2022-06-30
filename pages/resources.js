@@ -43,6 +43,7 @@ export async function getStaticProps() {
     const resources = await getResources() || []
     return {
         props: { resources },
+        revalidate: 10
     }
 }
 

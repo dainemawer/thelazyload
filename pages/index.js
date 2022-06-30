@@ -103,6 +103,7 @@ export async function getStaticProps() {
 
     return {
         props: { articles, resources, tracks, tags },
+        revalidate: 10,
     }
 }
 

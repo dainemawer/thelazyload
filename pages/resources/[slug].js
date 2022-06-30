@@ -78,6 +78,7 @@ export async function getStaticProps({ params }) {
             },
             opengraph
         },
+        revalidate: 10
     }
 }
 

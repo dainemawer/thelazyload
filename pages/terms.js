@@ -19,6 +19,7 @@ export async function getStaticProps() {
     const terms = await getPage('terms') || {}
     return {
         props: { terms },
+        revalidate: 10
     }
 }
 
